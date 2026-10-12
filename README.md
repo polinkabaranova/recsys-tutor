@@ -73,7 +73,6 @@
 ## Над чем работаю дальше
 
 - Пилот на моих учениках: применить модель к их обезличенным ответам и посмотреть, какие задачи она советует.
-- Страница на Streamlit, где репетитор загружает таблицу с ответами учеников и получает рекомендации.
 - Спланировать A/B-тест на собственных учениках.
 - Попробовать нейросеть на PyTorch, которая учитывает всю последовательность ответов ученика, и сравнить её с логистической регрессией.
 - Добавить объяснения и подсказки к задачам через GigaChat.
@@ -82,7 +81,7 @@
 
 Открыть `recsys_tutor.ipynb` в Google Colab и выбрать «Среда выполнения» → «Выполнить все». Данные скачаются автоматически.
 
-**Стек:** Python, pandas, NumPy, scikit-learn, PySpark, Spark SQL, matplotlib, Google Colab.
+**Стек:** Python, pandas, NumPy, scikit-learn, PySpark, Spark SQL, matplotlib, Streamlit, Google Colab.
 ## In English
 
 I work as a tutor, and before every lesson I decide which exercise a student should get next. In this project I built a next-exercise recommender for math students on the public ASSISTments 2009–2010 dataset (~275k real answers). I computed features strictly from each student's past answers and split the data by time. A logistic regression (ROC-AUC 0.762) clearly beats a simple per-topic rule (0.640) and matches gradient boosting, so I chose the simpler model. The final recommender picks unsolved exercises from the student's three weakest topics with a predicted success chance closest to 70%; offline, exercises in the model's 60–80% band were actually solved 71% of the time.
